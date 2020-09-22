@@ -3,8 +3,6 @@ public class Calculadora {
     private int _limiteMin;
     private int _limiteMax;
 
-    ValidadorLimitesImpl validadorLimites = new ValidadorLimitesImpl(_limiteMax, _limiteMin);
-
 
     public int limiteMaximo(){
         get_limiteMax();
@@ -23,14 +21,11 @@ public class Calculadora {
         set_limiteMax(maxValor);
         set_limiteMin(minValor);
     }
-    Calculadora(){
-        set_limiteMin(-100);
-        set_limiteMax(100);
-    }
+
 
     public int add(int arg1, int arg2){
         int result = arg1 + arg2;
-        validadorLimites.validarArgumentos(arg1, arg2);
+        ValidadorLimitesImpl.validarArgumentos(this, arg1, arg2);
         if(result > _limiteMax){
             throw new ArithmeticException("Límite máximo excedido");
         }
@@ -39,7 +34,7 @@ public class Calculadora {
 
     public int substract(int arg1, int arg2) {
         int result = arg1 - arg2;
-        validadorLimites.validarArgumentos(arg1, arg2);
+        ValidadorLimitesImpl.validarArgumentos(this, arg1, arg2);
         if(result < _limiteMin){
             throw new ArithmeticException("Límite máximo excedido");
         }

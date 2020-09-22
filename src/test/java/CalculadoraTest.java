@@ -96,7 +96,7 @@ public class CalculadoraTest {
     @Test
     public void argumentsExceedLimitsSubstract(){
         try{
-            validadorLimites.validarArgumentos(calculadora.limiteMaximo() + 1, calculadora.limiteMinimo() - 1);
+            validadorLimites.validarArgumentos(calculadora, calculadora.limiteMaximo() + 1, calculadora.limiteMinimo() - 1);
             Assert.fail("Esto debe fallar: Los argumentos exceden los límites");
         }catch (ArithmeticException e){}
     }
@@ -104,7 +104,7 @@ public class CalculadoraTest {
     @Test
     public void argumentsExceedLimitsInverseSubstract(){
         try{
-            validadorLimites.validarArgumentos(calculadora.limiteMinimo() - 1, calculadora.limiteMaximo() + 1);
+            validadorLimites.validarArgumentos(calculadora, calculadora.limiteMinimo() - 1, calculadora.limiteMaximo() + 1);
             Assert.fail("Esto debe fallar: Los argumentos exceden los límites");
         }catch (ArithmeticException e){}
     }

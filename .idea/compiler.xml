@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="calculadora" />
+        <module name="dise-o_agil_con_tdd" />
       </profile>
     </annotationProcessing>
   </component>
